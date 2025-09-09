@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { useUIStore } from "../../store/useStore";
 
 const tabs = [
-  { id: "element_1", label: "Кнопка 1" },
-  { id: "element_2", label: "Кнопка 2" },
+  { id: "1", label: "Сегодня" },
+  { id: "2", label: "Календарь" },
 ];
 
 export default function Footer() {
@@ -17,25 +17,29 @@ export default function Footer() {
       <div className="wrapper pt-3 pb-8">
         <div className="flex items-center gap-3">
           {/* Панель с кнопками */}
-          <div className="w-full mx-auto flex space-x-1 bg-gray-200 rounded-full p-1">
+          <div className="w-full mx-auto flex space-x-1 bg-gray-200 border-y-2 border-t-gray-300 border-b-gray-50 rounded-full p-[3px] px-[4px]">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative rounded-full w-full rounded-button px-4 py-2 ${
+                className={`relative rounded-full w-full rounded-button px-4 pt-2 pb-[11px] -translate-y-[1px] ${
                   activeTab === tab.id
-                    ? "text-black" // активная кнопка → текст черный
+                    ? "text-gray-800"
                     : "text-gray-700 hover:text-black/60"
                 }`}
               >
                 {activeTab === tab.id && (
                   <motion.span
                     layoutId="bubble"
-                    className="absolute inset-0 z-10 bg-white rounded-full shadow"
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                    className="absolute inset-0 z-10 bg-gray-50 border-y border-t-white border-b-gray-300  rounded-full shadow"
+                    transition={{ type: "spring", bounce: 0.1, duration: 0.3 }}
                   />
                 )}
-                <span className="relative z-20">{tab.label}</span>
+                <span
+                  className={`${tab.id === "1" && "text-xl"} relative z-20`}
+                >
+                  {tab.label}
+                </span>
               </button>
             ))}
           </div>
