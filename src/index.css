@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Bodik";
+  src: url("/fonts/font-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bodik";
+  src: url("/fonts/font-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@theme {
+  --font-bodik: "Bodik", sans-serif;
+  --color-accent: #014c76;
+  --color-warning: #ff5252;
+  --color-panel: #eeedf4;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  @apply font-bodik;
+}
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  @apply cursor-pointer;
+}
+
+header,
+footer {
+  @apply bg-panel;
+}
+
+.wrapper {
+  @apply max-w-4xl mx-auto px-3;
+}
+
+.rounded-button {
+  @apply h-12 rounded-full flex items-center justify-center;
+}
