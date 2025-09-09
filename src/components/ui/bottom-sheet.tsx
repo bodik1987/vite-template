@@ -20,7 +20,7 @@ export default function BottomSheet({
     <Drawer.Root open={open} onClose={onClose}>
       <Drawer.Overlay className="fixed inset-0 bg-black/40 z-20" />
 
-      <Drawer.Content className="fixed z-30 bottom-0 left-0 right-0 wrapper bg-panel flex flex-col justify-end rounded-t-[18px] mt-24 outline-none overflow-hidden">
+      <Drawer.Content className="fixed z-30 bottom-0 left-0 right-0 wrapper bg-gray-200 flex flex-col justify-end rounded-t-[18px] mt-24 outline-none overflow-hidden">
         <Drawer.Title />
         <Drawer.Description />
 
