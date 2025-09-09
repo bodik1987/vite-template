@@ -17,7 +17,7 @@ export default function Footer() {
       <div className="wrapper pt-3 pb-8">
         <div className="flex items-center gap-3">
           {/* Панель с кнопками */}
-          <div className="w-full mx-auto flex space-x-1 bg-gray-200 border-y-2 border-t-gray-300 border-b-gray-50 rounded-full p-[3px] pl-[4px] pr-[5px]">
+          <div className="w-full mx-auto flex space-x-1 bg-gray-200 border-y-2 border-t-gray-300 border-b-gray-50 rounded-full py-[3px] pl-[4px] pr-[5px]">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
@@ -31,7 +31,7 @@ export default function Footer() {
                 {activeTab === tab.id && (
                   <motion.span
                     layoutId="bubble"
-                    className="absolute inset-0 z-10 bg-gray-50 border-y border-t-white border-b-gray-300  rounded-full shadow"
+                    className="absolute inset-0 z-10 bg-gray-50 border-y border-t-white border-b-gray-300 rounded-full shadow"
                     transition={{ type: "spring", bounce: 0.1, duration: 0.2 }}
                   />
                 )}
@@ -50,7 +50,7 @@ export default function Footer() {
               setContentKey("list");
             }}
             type="button"
-            className="rounded-button w-12 aspect-square bg-accent text-white"
+            className="rounded-button !w-13 !h-13 aspect-square bg-gray-50 border-y-2 border-t-white border-b-gray-300 shadow mb-1 text-gray-500 text-3xl pb-1.5"
           >
             +
           </button>
